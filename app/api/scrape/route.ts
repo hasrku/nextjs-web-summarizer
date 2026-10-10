@@ -14,6 +14,12 @@ interface ScrapeRequest {
     url: string;
 }
 
+const executablePath = process.env.CHROME_EXECUTABLE_PATH;
+
+if (!executablePath) {
+    throw new Error("CHROME_EXECUTABLE_PATH is missing from .env.local");
+}
+
 export async function POST(request: Request) {
     let browser: Awaited<ReturnType<typeof puppeteer.launch>> | undefined;
 
@@ -50,7 +56,7 @@ export async function POST(request: Request) {
         }
 
         browser = await puppeteer.launch({
-            executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            executablePath,
             headless: true,
             args: ["--no-sandbox", "--disable-setuid-sandbox"],
         });
