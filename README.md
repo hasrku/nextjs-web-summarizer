@@ -1,4 +1,4 @@
-# Web to Markdown
+# NextJS Web-Scraper Summarrizer
 
 A web scraping tool that captures webpage screenshots, converts page
 content into readable Markdown, and generates AI-powered summaries with
@@ -6,8 +6,7 @@ Gemini 2.5 Flash.
 
 ## Demo
 
-[Watch the demo
-video](https://drive.google.com/file/d/1RUSHhSiL6oddReoxfA92aUEkNpaaXjD4/view?usp=sharing)
+[Watch the demo video](https://drive.google.com/file/d/1RUSHhSiL6oddReoxfA92aUEkNpaaXjD4/view?usp=sharing)
 
 ## Screenshots
 
@@ -38,13 +37,6 @@ video](https://drive.google.com/file/d/1RUSHhSiL6oddReoxfA92aUEkNpaaXjD4/view?us
 6.  Once summarization completes, the summary, screenshot, URL, and
     Markdown are saved in local storage.
 
-## Tech Stack
-
-- **Frontend:** Next.js, React, Tailwind CSS
-- **Scraping:** Puppeteer, Google Chrome
-- **Markdown:** Turndown, React Markdown
-- **AI:** Gemini 2.5 Flash, Google GenAI SDK
-
 ## Local Setup
 
 ### 1. Install dependencies
@@ -69,18 +61,19 @@ Studio](https://aistudio.google.com/). Ensure Chrome is installed on
 your Mac; if it is in a different location, update
 `CHROME_EXECUTABLE_PATH` to its executable path.
 
-The scraper reads the path from `process.env.CHROME_EXECUTABLE_PATH` in
-`app/api/scrape/route.ts`.
-
 ### 3. Start the development server
+
+1. start the server
 
 ```bash
 npm run dev
 ```
 
-Open <http://localhost:3000>.
+2. Open in browser
 
-**Note:** Keep `.env.local` private and do not commit your API key.
+```bash
+http://localhost:3000
+```
 
 ## Deployment Limitation
 
